@@ -1,0 +1,49 @@
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): server.ts src/**/*[39m
+[33m[nodemon] watching extensions: ts,tsx,js,jsx[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://0.0.0.0:3000
+> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 7.5s (815 modules)
+ GET / 200 in 9200ms
+ ○ Compiling /favicon.ico ...
+ ⚠ Cross origin request detected from 0.0.0.0 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ✓ Compiled /favicon.ico in 2.2s (449 modules)
+ GET /favicon.ico 200 in 2900ms
+ ○ Compiling /api/upload ...
+ ✓ Compiled /api/upload in 1027ms (822 modules)
+ POST /api/upload 200 in 1238ms
+ ○ Compiling /api/enhance ...
+ ✓ Compiled /api/enhance in 800ms (824 modules)
+Z.ai API error for package.json: Status 429 - {"error":{"code":"1113","message":"Account out of credit"}}
+Error enhancing file package.json: Error: Z.ai API request failed: 429 - {"error":{"code":"1113","message":"Account out of credit"}}
+    at eval (src/app/api/enhance/route.ts:85:16)
+    at async POST (src/app/api/enhance/route.ts:105:27)
+  83 |           console.error(`Z.ai API error for ${file.name}: Status ${response.status} - ${errorDetails}`);
+  84 |           // Throw an error to be caught by the outer catch block
+> 85 |           throw new Error(`Z.ai API request failed: ${response.status} - ${errorDetails}`);
+     |                ^
+  86 |         }
+  87 |
+  88 |         const completion = await response.json(); // Parse the JSON response
+ POST /api/enhance 200 in 2866ms
+ ○ Compiling /api/refactor ...
+ ✓ Compiled /api/refactor in 851ms (826 modules)
+Z.ai API error for package.json: Status 429 - {"error":{"code":"1113","message":"Account out of credit"}}
+Error refactoring file package.json: Error: Z.ai API request failed: 429 - {"error":{"code":"1113","message":"Account out of credit"}}
+    at eval (src/app/api/refactor/route.ts:85:16)
+    at async POST (src/app/api/refactor/route.ts:105:27)
+  83 |           console.error(`Z.ai API error for ${file.name}: Status ${response.status} - ${errorDetails}`);
+  84 |           // Throw an error to be caught by the outer catch block
+> 85 |           throw new Error(`Z.ai API request failed: ${response.status} - ${errorDetails}`);
+     |                ^
+  86 |         }
+  87 |
+  88 |         const completion = await response.json(); // Parse the JSON response
+ POST /api/refactor 200 in 3259ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1635ms (830 modules)
+ POST /api/rebuild 404 in 2567ms
